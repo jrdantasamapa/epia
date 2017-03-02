@@ -19,6 +19,8 @@
     @include('pia.anexo')
 @elseif($url == 'ficha')
     @include('pia.ficha')
+@elseif($url == 'ocorrencia')
+    @include('pia.ocorrencia')
 @endif
 @endsection
 

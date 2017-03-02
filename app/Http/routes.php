@@ -53,6 +53,7 @@ Route::group(array('before' => 'auth'), function(){
 		Route::get('/desacolher{id}{status}', 'AcolhidoController@motivo');
 		Route::post('/desacolher', 'AcolhidoController@status');
 		Route::post('/inserirficha', 'PiaController@inserirficha');
+		Route::post('/inserirocorrencia', 'PiaController@inserirocorrencia');
 		
 
 
@@ -113,8 +114,9 @@ Route::group(array('before' => 'auth'), function(){
 		
 		
 		Route::get('/ficha{id}', 'PiaController@ficha');
+		Route::get('/ocorrencia{id}', 'PiaController@ocorrencia');
 		Route::get('/anexar{id}', 'PiaController@anexar');
-		
+				
 		
 
 		

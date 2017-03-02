@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" media="all" href="/css/jquery-ui.structure.min.css">
   <link rel="stylesheet" type="text/css" media="all" href="/css/fullcalendar.css">
   <link rel="stylesheet" type="text/css" media="all" href="/css/fullcalendar.print.css">
+  <link rel="stylesheet" type="text/css" media="all" href="/css/personalizado.css">
 
 <script src="/js/jquery.min.js"></script>
 

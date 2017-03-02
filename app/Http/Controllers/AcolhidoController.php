@@ -10,6 +10,8 @@ use DB;
 use App\Acolhido;
 use App\Pia;
 use App\Permission;
+use App\Ficha;
+use App\Ocorrencia;
 use Auth;
 
 class AcolhidoController extends Controller
@@ -82,8 +84,11 @@ class AcolhidoController extends Controller
 
     public function view($id){
         $acolhidos = Acolhido::find($id);
+        $fichas = Ficha::where('acolhido_id', $id)->get();
+        $ocorrencias = Ocorrencia::where('acolhido_id', $id)->get();
         $url = 'view';
-        return view('pia.acolhido.index', compact('acolhidos','url'));
+        $usuarios = User::all();
+        return view('pia.acolhido.index', compact('acolhidos','url', 'fichas', 'usuarios', 'ocorrencias'));
     }
 
     public function motivo($id, $status){

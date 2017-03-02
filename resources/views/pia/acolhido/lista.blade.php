@@ -45,17 +45,21 @@
               @endif
               @if($acolhido->pia_status == 1)
                 @can('bt_editapia_acolhido')
-                    <a href="editapia{{$acolhido->id}}"><i class="btn btn-success fa fa-bed" ata-toggle="tooltip" data-placement="top" title="Editar PIA Acolhido" aria-hidden="true"></i></a>
+                    <a href="editapia{{$acolhido->id}}"><i class="btn btn-green fa fa-bed" ata-toggle="tooltip" data-placement="top" title="Editar PIA Acolhido" aria-hidden="true"></i></a>
                 @endcan
                 @can('bt_ficha_acolhido')
-                    <a href="ficha{{$acolhido->id}}" class="btn btn-default"><i class="fa fa-clipboard" ata-toggle="tooltip" data-placement="top" title="Incluir Ficha Evolutiva" aria-hidden="true"></i></a>
+                    <a href="ficha{{$acolhido->id}}" class="btn btn-dark"><i class="fa fa-clipboard" ata-toggle="tooltip" data-placement="top" title="Incluir Ficha Evolutiva" aria-hidden="true"></i></a>
                 @endcan
               @endif    
                 @can('bt_anexo') 
-                  <a href="anexar{{$acolhido->id}}" class="btn btn-default"><i class="fa fa-folder" ata-toggle="tooltip" data-placement="top" title="Anexar Documento ao Acolhido" aria-hidden="true"></i></a>
+                  <a href="anexar{{$acolhido->id}}" class="btn btn-chocolate"><i class="fa fa-folder" ata-toggle="tooltip" data-placement="top" title="Anexar Documento ao Acolhido" aria-hidden="true"></i></a>
+                @endcan
+                
+                @can('bt_ocorrencia') 
+                  <a href="ocorrencia{{$acolhido->id}}" class="btn btn-cinza"><i class="fa fa-tags" ata-toggle="tooltip" data-placement="top" title="Inserir Ocorrências" aria-hidden="true"></i></a>
                 @endcan
                 @can('bt_desacolher_pia_acolhido') 
-                  <a href="desacolher{{$acolhido->id}}{{0}}"><i class="btn btn-warning fa fa-ban" ata-toggle="tooltip" data-placement="top" title="Desacolher Acolhido" aria-hidden="true"></i></a>
+                  <a href="desacolher{{$acolhido->id}}{{0}}"><i class="btn btn-red fa fa-ban" ata-toggle="tooltip" data-placement="top" title="Desacolher Acolhido" aria-hidden="true"></i></a>
                 @endcan
           
          </td>

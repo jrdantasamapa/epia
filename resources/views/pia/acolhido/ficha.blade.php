@@ -313,13 +313,60 @@
 				<div class="col-xs-12">
 					FICHAS EVOLUTIVAS:
 				</div>
+				<table class="table ls-table">
+			      <thead>
+			        <tr>
+			          <th class="ls-nowrap col-xs-2">Especialidade</th>
+			          <th class="ls-nowrap col-xs-2">Data</th>
+			          <th class="ls-nowrap col-xs-5">Historico</th>
+			          <th class="ls-nowrap col-xs-3">Usuário</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			       @foreach($fichas as $ficha)
+			        <tr>
+			         <td>{!! $ficha->especialidade !!}</td>
+			         <td>{!! $ficha->dt_ficha!!}</td>
+			         <td>{!! $ficha->evolucao !!}</td>
+			         @foreach($usuarios as $usuario)
+			         	@if($ficha->user_id == $usuario->id)
+			         		<td>{!! $usuario->name !!}</td>
+			         	@endif
+			         @endforeach
+			       </tr>
+			       @endforeach
+			     </tbody>
+   				</table>
 			</div>
 			<div class="col-xs-12"> <!-- fAMILIA -->
 			<br>
+
 			<div class="col-md-12" style="color: #00688B; background-color: #00688B; height: 2px;"></div>
 				<div class="col-xs-12">
 					OCORRÊNCIAS:
 				</div>
+				<table class="table ls-table">
+			      <thead>
+			        <tr>
+			          <th class="ls-nowrap col-xs-3">Data Ocorrência</th>
+			          <th class="ls-nowrap col-xs-6">Historico</th>
+			          <th class="ls-nowrap col-xs-3">Usuário</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			       @foreach($ocorrencias as $ocorrencia)
+			        <tr>
+			         <td>{!! $ocorrencia->dt_ocorrencia !!}</td>
+			         <td>{!! $ocorrencia->ocorrencia!!}</td>
+			         @foreach($usuarios as $usuario)
+			         	@if($ocorrencia->user_id == $usuario->id)
+			         		<td>{!! $usuario->name !!}</td>
+			         	@endif
+			         @endforeach
+			       </tr>
+			       @endforeach
+			     </tbody>
+   				</table>
 			</div>
 			<div class="col-xs-12"> <!-- fAMILIA -->
 			<br>

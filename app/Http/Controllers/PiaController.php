@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Pia;
 use App\Acolhido;
+use App\Ficha;
+use App\Ocorrencia;
 use DB;
 
 class PiaController extends Controller
@@ -67,12 +69,35 @@ class PiaController extends Controller
         return view('pia.index', compact('acolhidos','url'));
     }
 
+    public function ocorrencia($id){
+        $acolhidos = Acolhido::find($id);
+        $url = 'ocorrencia';
+        return view('pia.index', compact('acolhidos','url'));
+    }
+
      public function inserirficha(Request $request){
-             notify()->flash('Ficha Evolutiva ',
+        $data = $request->all();
+        $ficha = new  Ficha($data);
+        if ($ficha->save()) {   
+            notify()->flash('Ficha Evolutiva ',
             'success',
             ['timer'=> 3000,
             'text'=> 'Inserido Com Sucesso'
             ]);
             return Redirect('/listaacolhido');
         }
+    }
+
+    public function inserirocorrencia(Request $request){
+        $data = $request->all();
+        $ocorrencia = new  Ocorrencia($data);
+        if ($ocorrencia->save()) {   
+            notify()->flash('Ocorrência ',
+            'success',
+            ['timer'=> 3000,
+            'text'=> 'Inserido Com Sucesso'
+            ]);
+            return Redirect('/listaacolhido');
+        }
+    }
 }

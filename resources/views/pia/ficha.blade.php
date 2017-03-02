@@ -35,6 +35,7 @@
             </div>
             
             {!! Form::hidden('acolhido_id', $acolhidos->id ) !!}
+            {!! Form::hidden('user_id', Auth::user()->id ) !!}
 <hr style="color: #228B22; background-color: #228B22; height: 2px;">
                 <div class="form-group">
                  
