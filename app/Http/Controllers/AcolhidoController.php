@@ -21,14 +21,8 @@ class AcolhidoController extends Controller
 
     public function index(){
     	$acolhidos = Acolhido::where('status', '=', '1')->orderBy('nome', 'ASC')->paginate(10);
-        $pia = Pia::all();
-        if(count($pia) > 0){
-            $pias = Pia::all();
-        }else{
-            $pias = "sem registros";
-        }
         $url = 'lista';
-        return view('pia.acolhido.index', compact('acolhidos', 'url', 'pias'));
+        return view('pia.acolhido.index', compact('acolhidos', 'url'));
     }
 
     public function desacolhido(){

@@ -96,6 +96,7 @@
                         <label class="col-md-4 control-label">Telefone:</label>
                         {!! Form::text('pai_fone', '', array('class'=>'form-control','id'=>'Telefone', 'placeholder'=>'Telefone Pai')) !!}
                         {!! Form::hidden('status', '1' ) !!}
+                        {!! Form::hidden('pia_status', '0' ) !!}
                     </div>
                     </div>
                     <div class="col-md-12"> <hr style="color: #228B22; background-color: #228B22; height: 2px;"></div>

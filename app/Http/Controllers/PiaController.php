@@ -28,9 +28,12 @@ class PiaController extends Controller
     }
 
     public function inserte(Request $request){
-      	$data = $request->except('ga','cn', 'cv', 'et', 'rct', 'odc'); //files
+      	$data = $request->all();
         $pia = new  Pia($data);
         if ($pia->save()) {
+            DB::table('acolhidos')
+                ->where('id', $data['acolhido_id'])
+                ->update(array('pia_status' => 1 ));
              notify()->flash('PIA ',
             'success',
             ['timer'=> 3000,
