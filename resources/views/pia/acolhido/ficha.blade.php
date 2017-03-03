@@ -91,71 +91,72 @@
 				DADOS REFERENTE A PIA:
 			</div>
 			<div class="col-xs-12">
+			@foreach($pias as $pia)
 				<div class="col-xs-4" style="border: groove;">
-					Cart. Vacinação Nº: <b>113152552</b>
+					Cart. Vacinação Nº: <b>{{ $pia->vacina_numero}}</b>
 				</div>
 				<div class="col-xs-4" style="border: groove;">
-					CPF: <b>555.555.555-55</b>
+					CPF: <b>{{ $pia->cpf}}</b>
 				</div>
 				<div class="col-xs-4" style="border: groove;">
-					RG.: <b>00000000/SSPAP</b>
+					RG.: <b>{{ $pia->rg}}</b>
 				</div>
 
 
 				<div class="col-xs-4" style="border: groove;">
-					Guia de Acolhimento: <b>55522222</b>
+					Guia de Acolhimento: <b>{{ $pia->guia_numero}}</b>
 				</div>
 				<div class="col-xs-8"  style="border: groove;">
-					Emitente: <b>VARA FA INFANCIA</b>
+					Emitente: <b>{{ $pia->guia_emite}}</b>
 				</div>
 			
 
 				<div class="col-xs-3" style="border: groove;">
-					Cert. Nasc.: <b>552222</b>
+					Cert. Nasc.: <b>{{ $pia->cert_numero}}</b>
 				</div>
 				<div class="col-xs-2" style="border: groove;">
-					Folha: <b>555</b>
+					Folha: <b>{{ $pia->cert_folha}}</b>
 				</div>
 				<div class="col-xs-2" style="border: groove;">
-					Livro: <b>555</b>
+					Livro: <b>{{ $pia->cert_livro}}</b>
 				</div>
 				<div class="col-xs-5" style="border: groove;">
-					Cartorio: <b>asdasdasdasdas</b>
+					Cartorio: <b>{{ $pia->cert_carto}}</b>
 				</div>
 
 
 				<div class="col-xs-12" style="border: groove;">
-					Encaminhado por: <b>asdlaskdlças asçdkasdçask açsdkçaskdasç</b>
+					Encaminhado por: <b>{{ $pia->encaminhado_por}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Motivo do Encaminhamento: <b>asdlask dlç sdad asdas dasda sdas dasas asçdka sdçask açsdk ç askda sç </b>
+					Motivo do Encaminhamento: <b>{{ $pia->mot_enca}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Como foi a abordagem no momento em que ocorreu a retirada da crianção/adolecente: <b>asç 0ldka sçda slçdkas lçdk aslç dkas lçkd aççkd lçask dlasç</b>
+					Como foi a abordagem no momento em que ocorreu a retirada da crianção/adolecente: <b>{{ $pia->eabordagem}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Condições da Criança/Adolecente no momento do Acolhimento:: <b>asç 0ldka sçda slçdkas lçdk aslç dkas lçkd aççkd lçask dlasç</b>
+					Condições da Criança/Adolecente no momento do Acolhimento:: <b>{{ $pia->condicao}}</b>
 				</div>
 				<div class="col-xs-12">
 					ACOLHIMENTO ANTERIOR:
 				</div>
 				<div class="col-xs-6" style="border: groove;">
-					Instituição: <b>asKSDÇ AKSDKA SDKASDS ADASDAS DASD</b>
+					Instituição: <b>{{ $pia->instituicao_at}}</b>
 				</div>
 				<div class="col-xs-3" style="border: groove;">
-					Data Acolhimento: <b>00/00/0000</b>
+					Data Acolhimento: <b>{{ $pia->dt_entrada_at}}</b>
 				</div>
 				<div class="col-xs-3" style="border: groove;">
-					Data Desacolhimento: <b>00/00/0000</b>
+					Data Desacolhimento: <b>{{ $pia->dt_saida_at}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Motivo do Acolhimento: <b>asKSDÇ AKSDKA SDKASDS ADASDAS DASD</b>
+					Motivo do Acolhimento: <b>{{ $pia->mot_acol_at}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Motivo do Desacolhimento: <b>asKSDÇ AKSDKA SDKASDS ADASDAS DASD</b>
+					Motivo do Desacolhimento: <b>{{ $pia->mot_desacol_at}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Encaminhamentos dados à família e a Criança/Adolecente anteriormente ao acolhimento: <b>asKSDÇ AKSDKA SDKASDS ADASDAS DASD</b>
+					Encaminhamentos dados à família e a Criança/Adolecente anteriormente ao acolhimento: <b>{{ $pia->enc_at}}</b>
 				</div>
 
 
@@ -174,12 +175,12 @@
 					DADOS DA SITUAÇÃO FAMILIAR:
 				</div>
 				<div class="col-xs-6" style="border: groove;">
-					Vinculo Familia: <b>11sda sdasd asds 315a sdasd as2 5 asd52</b>
+					Vinculo Familia: <b>{{ $pia->vinculo_familiar}}</b>
 				</div>
 				<div class="col-xs-6" style="border: groove;">
-					Situação Familiar: <b>11sda sdasd asds 315a sdasd as2 5 asd52</b>
+					Situação Familiar: <b>{{ $pia->situacao_familiar}}</b>
 				</div>
-
+		@endforeach
 				<div class="col-xs-12" style="border: groove;">
 					Arranjo Familiar(Pessoas com as quais reside antes da Instituição):
 						<table class="table ls-table">
@@ -193,34 +194,39 @@
 							</tr>
 							</thead>
 						<tbody>
+						@foreach($arranjos as $arranjo)
 							<tr>
-         						<td></td>
-         						<td></td>
-         						<td></td>
-         						<td></td>
-         						<td></td>
-         					</tr>	
+								<td>{{ $arranjo->nome }}</td>
+         						<td>{{ $arranjo->idade }}</td>
+         						<td>{{ $arranjo->parentesco }}</td>
+         						<td>{{ $arranjo->profissao }}</td>
+         						<td>{{ $arranjo->religiao }}</td>
+         					</tr>
+         				@endforeach	
 						</tbody>
 						</table>
 				</div>
+			@foreach($pias as $pia)
 				<div class="col-xs-6" style="border: groove;">
-					Há interessados na Guarda da Criança/Adolescente: <b>SIM</b>
+					Há interessados na Guarda da Criança/Adolescente: 
+					<b>{{ $pia->guarda}}</b>
 				</div>
 				<div class="col-xs-6"  style="border: groove;">
-					<b>asd asd asd asd asd asd asd asd asd asd asd</b>
+					<b>{{ $pia->desc_guarda}}</b>
 				</div>
 				<div class="col-xs-7" style="border: groove;">
-					A Familia reside no mesmo Municipio no qual a Criança/Adolescente Esta Acolhido: <b>SIM</b>
+					A Familia reside no mesmo Municipio no qual a Criança/Adolescente Esta Acolhido: <b>{{ $pia->familia_reside}}</b>
 				</div>
 				<div class="col-xs-5"  style="border: groove;">
-					<b>asd asd asd asd asd asd asd asd asd asd asd</b>
+					<b>{{ $pia->municipi_familia}}</b>
 				</div>
 				<div class="col-xs-7" style="border: groove;">
-					A Família é atendida por Programas / Beneficios Social: <b>SIM</b>
+					A Família é atendida por Programas / Beneficios Social: <b>{{ $pia->prog_social}}</b>
 				</div>
 				<div class="col-xs-5" style="border: groove;">
-					Total Benefício: <b>R$ 110,00</b>
+					Total Benefício: <b>R$ {{ $pia->total_beneficio}}</b>
 				</div>
+			
 				<div class="col-xs-12" style="border: groove;">
 					Detalhamento do Benefício:
 						<table class="table ls-table">
@@ -232,20 +238,28 @@
 							</thead>
 						<tbody>
 							<tr>
-         						<td></td>
-         						<td></td>
+         						<td>Bolsa Família</td>
+         						<td>R$ {{ $pia->bolsa_benefico}}</td>
+         					</tr>
+         					<tr>
+         						<td>RPVM</td>
+         						<td>R$ {{ $pia->rpvm_benefico}}</td>
+         					</tr>
+         					<tr>
+         						<td>Outros</td>
+         						<td>R$ {{ $pia->outros_benefico}}</td>
          					</tr>	
 						</tbody>
 						</table>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					A Família é atendida por Programas de atendimento à familia / Serviços de Saude: <b>SIM - PAS</b>
+					A Família é atendida por Programas de atendimento à familia / Serviços de Saude: <b>{{ $pia->prog_atendimento}} - {{ $pia->prog_atendimento_tipo}} - {{ $pia->prog_atendimento_espec}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Composição da Renda Familiar (Possuem Renda proveniente de atividade laboral e/ou pensão alimenticia: <b>SIM</b>
+					Composição da Renda Familiar (Possuem Renda proveniente de atividade laboral e/ou pensão alimenticia: <b>{{ $pia->pensao_alimenticia}} - {{ $pia->pensao_alimenticia_espec}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Condições de Moradia / Infraestrutura: <b>555 - ASDASD -ASDAS -ASDASD -ASDASD -ASDASD- ASD</b>
+					Condições de Moradia / Infraestrutura: <b>{{ $pia->situacao_moradia}} - {{ $pia->tipo_moradia}} - {{ $pia->lixo_moradia}} - {{ $pia->iluminacao_moradia}} - {{ $pia->esgoto_moradia}} - {{ $pia->agua_moradia}}</b>
 				</div>
 				</div>
 				<div class="col-xs-12">
@@ -253,20 +267,20 @@
 					COMPORTAMENTAL (Relação Familiar):
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Como é a relaçao com a família (fugas de casa, vinculos afetivos, indiferenças, brigas, etc.: <b>555 - ASDASD -ASDAS -ASDASD -ASDASD -ASDASD- ASD</b>
+					Como é a relaçao com a família (fugas de casa, vinculos afetivos, indiferenças, brigas, etc.: <b>{{ $pia->relacao_familiar}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Percepção da familia sobre criança/adolescente: <b>555 - ASDASD -ASDAS -ASDASD -ASDASD -ASDASD- ASD</b>
+					Percepção da familia sobre criança/adolescente: <b>{{ $pia->percepcao_familiar}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Percepção da Criança/Adolecente sobre a família: <b>555 - ASDASD -ASDAS -ASDASD -ASDASD -ASDASD- ASD</b>
+					Percepção da Criança/Adolecente sobre a família: <b>{{ $pia->percepcao_crianca}}</b>
 				</div>
 				<div class="col-xs-12" style="border: groove;">
-					Percepção da Equipe Técnica sobre as relações familiares: <b>555 - ASDASD -ASDAS -ASDASD -ASDASD -ASDASD- ASD</b>
+					Percepção da Equipe Técnica sobre as relações familiares: <b>{{ $pia->percepcao_tecnica }}</b>
 				</div>
 				</div>
 			</div>
-			
+			@endforeach
 			<div class="col-xs-12"> <!-- fAMILIA -->
 			<br>
 			<div class="col-md-12" style="color: #00688B; background-color: #00688B; height: 2px;"></div>
@@ -374,6 +388,36 @@
 				<div class="col-xs-12">
 					ANEXOS:
 				</div>
+				<table class="table ls-table">
+			      <thead>
+			        <tr>
+			          <th class="ls-nowrap col-xs-2">Data Anexo</th>
+			          <th class="ls-nowrap col-xs-5">Referencia</th>
+			          <th class="ls-nowrap col-xs-3">Tipo</th>
+			          <th class="ls-nowrap col-xs-3">Usuário</th>
+			          <th class="ls-nowrap col-xs-2">Downloads</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			       @foreach($anexos as $anexo)
+			        <tr>
+			         <td>{!! $anexo->created_at !!}</td>
+			         <td>{!! $anexo->referencia!!}</td>
+			         <td>{!! $anexo->tipo!!}</td>
+			         @foreach($usuarios as $usuario)
+			         	@if($anexo->user_id == $usuario->id)
+			         		<td>{!! $usuario->name !!}</td>
+			         	@endif
+			         @endforeach
+			         <td>
+			         @can('bt_baixar_anexo')
+			         <a href="{!! $anexo->local !!}" class="btn btn-chocolate">Baixar<i class="fa fa-folder" ata-toggle="tooltip" data-placement="top" title="Baixar Arquivo" aria-hidden="true"></i></a>
+			         @endcan
+			         </td>
+			       </tr>
+			       @endforeach
+			     </tbody>
+   				</table>
 			</div>
 			<div class="col-xs-12"> <!-- fAMILIA -->
 			<br>

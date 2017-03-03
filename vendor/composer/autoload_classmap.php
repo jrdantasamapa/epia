@@ -10,6 +10,7 @@ return array(
     'CreateAcolhidosTable' => $baseDir . '/database/migrations/outros/2016_08_04_175350_create_acolhidos_table.php',
     'CreateAcolhimentosTable' => $baseDir . '/database/migrations/outros/2016_07_29_231344_create_acolhimentos_table.php',
     'CreateAnexosTable' => $baseDir . '/database/migrations/outros/2016_12_27_150320_create_anexos_table.php',
+    'CreateArranjoTable' => $baseDir . '/database/migrations/2017_03_03_134533_create_arranjo_table.php',
     'CreateDadosacolhidosTable' => $baseDir . '/database/migrations/outros/2016_07_29_231320_create_dadosacolhidos_table.php',
     'CreateDesenvolvimentosTable' => $baseDir . '/database/migrations/outros/2016_07_29_231510_create_desenvolvimentos_table.php',
     'CreateEducacaosTable' => $baseDir . '/database/migrations/outros/2016_07_29_231424_create_educacaos_table.php',

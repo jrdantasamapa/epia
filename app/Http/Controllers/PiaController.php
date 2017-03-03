@@ -10,6 +10,7 @@ use App\Acolhido;
 use App\Ficha;
 use App\Ocorrencia;
 use App\Anexo;
+use App\Arranjo;
 use DB;
 use Input;
 
@@ -65,6 +66,13 @@ class PiaController extends Controller
         $url = 'anexo';
         return view('pia.index', compact('acolhidos','url'));
     }
+
+    public function arranjo($id){
+        $acolhidos = Acolhido::find($id);
+        $url = 'arranjo';
+        return view('pia.index', compact('acolhidos','url'));
+    }
+
     public function ficha($id){
         $acolhidos = Acolhido::find($id);
         $url = 'ficha';
@@ -108,9 +116,10 @@ class PiaController extends Controller
         $nomefile = $_FILES['file']['name'];
         $anexo = new  Anexo($data);
         if ($anexo->save()) {
-                $destino = public_path('/Anexos/'.$data['acolhido_id']);  
+                $destino = public_path('/Anexos/'.$data['acolhido_id']);
+                $local =  '/Anexos/'.$data['acolhido_id']; 
                 Input::file('file')->move($destino, $nomefile);
-                $local = $destino."/".$nomefile;
+                $local = $local."/".$nomefile;
                 DB::table('anexos')
                 ->where('id', $anexo->id)
                 ->update(array('local' => $local));
@@ -120,6 +129,20 @@ class PiaController extends Controller
             'text'=> 'Inserido Com Sucesso'
             ]);
             return Redirect('/listaacolhido');
+        }
+    }
+
+    public function inserirarranjo(Request $request){
+        $data = $request->all();
+        $id = $data['acolhido_id'];
+        $arranjo = new  Arranjo($data);
+        if ($arranjo->save()) {
+            notify()->flash('Arranjo ',
+            'success',
+            ['timer'=> 3000,
+            'text'=> 'Inserido Com Sucesso'
+            ]);
+            return Redirect('arranjo'.$id);
         }
     }
 }

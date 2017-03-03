@@ -140,59 +140,12 @@
                    </div>
                    <div class="col-md-12"> <hr style="color: #228B22; background-color: #228B22; height: 2px;"></div>
                    <!-- Verificar como tratar essa inserção -->
-                   <div class="col-md-12">
-                         <label class="col-md-12 control-label"> Arranjo Familiar(Pessoas com as quais reside antes da Instituição:</label>
-                         <div class="col-md-12">
-                          <table class="table ls-table">
-                            <thead>
-                              <tr>
-                                <th class="ls-nowrap col-xs-4">Nome</th>
-                                <th class="ls-nowrap col-xs-1">Idade</th>
-                                <th class="ls-nowrap col-xs-2">Parentesco:</th>
-                                <th class="ls-nowrap col-xs-3">Profissão/Ocupação:</th>
-                                <th class="ls-nowrap col-xs-2">religião:</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                             <tr>
-                               <td>{!! Form::text('nome_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('idade_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('paratenco_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('prof_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('religiao_aranjo', '', array('class'=>'form-control')) !!}</td>
-                             </tr>
-                              <tr>
-                               <td>{!! Form::text('nome_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('idade_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('paratenco_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('prof_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('religiao_aranjo', '', array('class'=>'form-control')) !!}</td>
-                             </tr>
-                              <tr>
-                               <td>{!! Form::text('nome_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('idade_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('paratenco_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('prof_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('religiao_aranjo', '', array('class'=>'form-control')) !!}</td>
-                             </tr>
-                              <tr>
-                               <td>{!! Form::text('nome_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('idade_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('paratenco_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('prof_arranjo', '', array('class'=>'form-control')) !!}</td>
-                               <td>{!! Form::text('religiao_aranjo', '', array('class'=>'form-control')) !!}</td>
-                             </tr>
-                            </tbody>  
-                         </table>
-                        </div>
-                   </div>
-                   <div class="col-md-12"> <hr style="color: #228B22; background-color: #228B22; height: 2px;"></div>
-                   <!-- Fim -->
+                   
                    <div class="col-md-12">
                          <label class="col-md-12 control-label"> Há interessados na Guarda da Criança/Adolescente:</label>
                          <div class="col-md-12">
                          <div class="col-md-3">
-                            {!! Form::select('guarda', array(''=>'Selecione','S'=>'Sim', 'N'=>'Não'),'', array('class'=>'form-control')) !!}
+                            {!! Form::select('guarda', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'),'', array('class'=>'form-control')) !!}
                           </div>
                           <div class="col-md-9">
                             {!! Form::text('desc_guarda', '', array('class'=>'form-control')) !!}
@@ -203,7 +156,7 @@
                          <label class="col-md-12 control-label"> A Familia reside no mesmo Municipio no qual a Criança/Adolescente Esta Acolhido:</label>
                          <div class="col-md-12">
                          <div class="col-md-3">
-                            {!! Form::select('familia_reside', array(''=>'Selecione','S'=>'Sim', 'N'=>'Não'),'', array('class'=>'form-control')) !!}
+                            {!! Form::select('familia_reside', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'),'', array('class'=>'form-control')) !!}
                           </div>
                           <div class="col-md-9">
                             {!! Form::text('municipi_familia', '', array('class'=>'form-control')) !!}
@@ -214,13 +167,13 @@
                     <div class="col-md-12">
                            <label class="col-md-6 control-label"> A Família é atendida por Programas / Beneficios Social:</label>
                           <div class="col-md-2">
-                          {!! Form::select('prog_social', array(''=>'Selecione','S'=>'Sim', 'N'=>'Não'),'', array('class'=>'form-control')) !!}</div>
+                          {!! Form::select('prog_social', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'),'', array('class'=>'form-control')) !!}</div>
                     </div>
                     <div class="col-md-6">
                           <table class="table ls-table">
                             <thead>
                               <tr>
-                                <th class="ls-nowrap col-xs-3">Programa/B. Social/S.Saúde</th>
+                                <th class="ls-nowrap col-xs-3">Programa/B. Social/Sim.Saúde</th>
                                 <th class="ls-nowrap col-xs-3">Valor</th>
                                 </tr>
                             </thead>
@@ -262,7 +215,7 @@
                       <div class="col-md-12">
                            <label class="col-md-9 control-label"> A Família é atendida por Programas de atendimento à familia / Serviços de Saude:</label>
                            <div class="col-md-2">
-                          {!! Form::select('prog_atendimento', array(''=>'Selecione','S'=>'Sim', 'N'=>'Não'), '', array('class'=>'form-control')) !!}
+                          {!! Form::select('prog_atendimento', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
                           </div>
                           {!! Form::select('prog_atendimento_tipo', array(''=>'Escolha o Programa','PSF'=>'PSF', 'CRAS'=>'CRAS', 'CAPS-AD'=> 'CAPS-AD', 'CREAS'=> 'CREAS'),'', array('class'=>'form-control')) !!}
                           {!! Form::text('prog_atendimento_espec', '', array('class'=>'form-control', 'placeholder'=>'Especificar')) !!}
@@ -270,7 +223,7 @@
                       <div class="col-md-12">
                            <label class="col-md-10 control-label"> Composição da Renda Familiar (Possuem Renda proveniente de atividade laboral e/ou pensão alimenticia:</label>
                            <div class="col-md-2">
-                          {!! Form::select('pensao_alimenticia', array(''=>'Selecione','S'=>'Sim', 'N'=>'Não'),'', array('class'=>'form-control')) !!}
+                          {!! Form::select('pensao_alimenticia', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'),'', array('class'=>'form-control')) !!}
                           </div>
                           {!! Form::text('pensao_aliment_espec', '', array('class'=>'form-control', 'placeholder'=>'Especificar')) !!}
                       </div>
@@ -327,7 +280,7 @@
                      <div class="col-md-6">
                          <label class="col-md-8 control-label">Frequentou eascola antes do acolhimento:</label>
                           <div class="col-md-4">
-                          {!! Form::select('freq_escola', array(''=>'Selecione Um Opção','S'=>'Sim', 'N'=>'Não'), '', array('class'=>'form-control')) !!}
+                          {!! Form::select('freq_escola', array(''=>'Selecione Um Opção','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
                           </div>
                       </div>
                       <div class="col-md-6">
@@ -382,7 +335,7 @@
                       </div>
                          <label class="col-md-4 control-label">Frequentatividade de contra-turno escolar:</label>
                           <div class="col-md-2">
-                          {!! Form::select('contra_turno', array(''=>'Selecione','S'=>'Sim', 'N'=>'Não'), '', array('class'=>'form-control')) !!}
+                          {!! Form::select('contra_turno', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
                           </div>
                           <div class="col-md-6">
                         {!! Form::text('espec_contra_turno', '', array('class'=>'form-control', 'placeholder'=>'Especificar')) !!}
@@ -457,7 +410,7 @@
                        
                           <label class="col-md-5 control-label"> Já desenvolvel alguma atividade remunerada:</label>
                           <div class="col-md-4">
-                          {!! Form::select('ativ_remunerada', array(''=>'Selecione Um Opção','S'=>'Sim', 'N'=>'Não'),'', array('class'=>'form-control')) !!}
+                          {!! Form::select('ativ_remunerada', array(''=>'Selecione Um Opção','Sim'=>'Sim', 'Não'=>'Não'),'', array('class'=>'form-control')) !!}
                           </div>
                           <div class="col-md-12">
                           {!! Form::text('quais_ativ', '', array('class'=>'form-control', 'placeholder'=>'Quais Atividades')) !!}  

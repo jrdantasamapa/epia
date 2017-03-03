@@ -12,6 +12,8 @@ use App\Pia;
 use App\Permission;
 use App\Ficha;
 use App\Ocorrencia;
+use App\Anexo;
+use App\Arranjo;
 use Auth;
 
 class AcolhidoController extends Controller
@@ -86,9 +88,12 @@ class AcolhidoController extends Controller
         $acolhidos = Acolhido::find($id);
         $fichas = Ficha::where('acolhido_id', $id)->get();
         $ocorrencias = Ocorrencia::where('acolhido_id', $id)->get();
+        $anexos = Anexo::where('acolhido_id', $id)->get();
+        $pias = Pia::where('acolhido_id', $id)->get();
+        $arranjos = Arranjo::where('acolhido_id', $id)->get();
         $url = 'view';
         $usuarios = User::all();
-        return view('pia.acolhido.index', compact('acolhidos','url', 'fichas', 'usuarios', 'ocorrencias'));
+        return view('pia.acolhido.index', compact('acolhidos','url', 'fichas', 'usuarios', 'ocorrencias', 'anexos', 'pias', 'arranjos'));
     }
 
     public function motivo($id, $status){

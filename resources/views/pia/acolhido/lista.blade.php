@@ -12,8 +12,8 @@
           <th class="ls-nowrap col-xs-3">Nome</th>
           <th class="ls-nowrap col-xs-1">Autos</th>
           <th class="ls-nowrap col-xs-1">Nº Guia</th>
-          <th class="ls-nowrap col-xs-2">Data Nascimento</th>
-          <th class="ls-nowrap col-xs-4">Ações</th>
+          <th class="ls-nowrap col-xs-1">Data Nasc.</th>
+          <th class="ls-nowrap col-xs-5">Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -47,10 +47,13 @@
                 @can('bt_editapia_acolhido')
                     <a href="editapia{{$acolhido->id}}"><i class="btn btn-green fa fa-bed" ata-toggle="tooltip" data-placement="top" title="Editar PIA Acolhido" aria-hidden="true"></i></a>
                 @endcan
+              @endif
                 @can('bt_ficha_acolhido')
                     <a href="ficha{{$acolhido->id}}" class="btn btn-dark"><i class="fa fa-clipboard" ata-toggle="tooltip" data-placement="top" title="Incluir Ficha Evolutiva" aria-hidden="true"></i></a>
                 @endcan
-              @endif    
+                @can('bt_arrajo') 
+                  <a href="arranjo{{$acolhido->id}}" class="btn btn-info"><i class="fa fa-users" ata-toggle="tooltip" data-placement="top" title="Inserir Arranjo Familiar" aria-hidden="true"></i></a>
+                @endcan    
                 @can('bt_anexo') 
                   <a href="anexar{{$acolhido->id}}" class="btn btn-chocolate"><i class="fa fa-folder" ata-toggle="tooltip" data-placement="top" title="Anexar Documento ao Acolhido" aria-hidden="true"></i></a>
                 @endcan

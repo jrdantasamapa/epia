@@ -21,6 +21,8 @@
     @include('pia.ficha')
 @elseif($url == 'ocorrencia')
     @include('pia.ocorrencia')
+@elseif($url == 'arranjo')
+    @include('pia.arranjo')
 @endif
 @endsection
 

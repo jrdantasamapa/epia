@@ -303,6 +303,7 @@ class ComposerStaticInita321e9a8de35f49b78f284b42b0be6cf
         'CreateAcolhidosTable' => __DIR__ . '/../..' . '/database/migrations/outros/2016_08_04_175350_create_acolhidos_table.php',
         'CreateAcolhimentosTable' => __DIR__ . '/../..' . '/database/migrations/outros/2016_07_29_231344_create_acolhimentos_table.php',
         'CreateAnexosTable' => __DIR__ . '/../..' . '/database/migrations/outros/2016_12_27_150320_create_anexos_table.php',
+        'CreateArranjoTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_03_134533_create_arranjo_table.php',
         'CreateDadosacolhidosTable' => __DIR__ . '/../..' . '/database/migrations/outros/2016_07_29_231320_create_dadosacolhidos_table.php',
         'CreateDesenvolvimentosTable' => __DIR__ . '/../..' . '/database/migrations/outros/2016_07_29_231510_create_desenvolvimentos_table.php',
         'CreateEducacaosTable' => __DIR__ . '/../..' . '/database/migrations/outros/2016_07_29_231424_create_educacaos_table.php',
