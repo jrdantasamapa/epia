@@ -9,7 +9,9 @@ use App\Pia;
 use App\Acolhido;
 use App\Ficha;
 use App\Ocorrencia;
+use App\Anexo;
 use DB;
+use Input;
 
 class PiaController extends Controller
 {
@@ -93,6 +95,26 @@ class PiaController extends Controller
         $ocorrencia = new  Ocorrencia($data);
         if ($ocorrencia->save()) {   
             notify()->flash('Ocorrência ',
+            'success',
+            ['timer'=> 3000,
+            'text'=> 'Inserido Com Sucesso'
+            ]);
+            return Redirect('/listaacolhido');
+        }
+    }
+
+    public function inseriranexo(Request $request){
+        $data = $request->except('file');
+        $nomefile = $_FILES['file']['name'];
+        $anexo = new  Anexo($data);
+        if ($anexo->save()) {
+                $destino = public_path('/Anexos/'.$data['acolhido_id']);  
+                Input::file('file')->move($destino, $nomefile);
+                $local = $destino."/".$nomefile;
+                DB::table('anexos')
+                ->where('id', $anexo->id)
+                ->update(array('local' => $local));
+            notify()->flash('Anexo ',
             'success',
             ['timer'=> 3000,
             'text'=> 'Inserido Com Sucesso'

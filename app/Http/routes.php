@@ -116,6 +116,7 @@ Route::group(array('before' => 'auth'), function(){
 		Route::get('/ficha{id}', 'PiaController@ficha');
 		Route::get('/ocorrencia{id}', 'PiaController@ocorrencia');
 		Route::get('/anexar{id}', 'PiaController@anexar');
+		Route::post('anexar', 'PiaController@inseriranexo');
 				
 		
 
