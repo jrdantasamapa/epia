@@ -5,22 +5,43 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Fpdf;
+use Auth;
 
 class PdfController extends Controller
 {
-    public function github (){
+    
 
-    //	$pdf = App::make('snappy.pdf.wrapper');
-		//$pdf->loadHTML('<h1>Test</h1>');
-		//return $pdf->inline();
- 		return \PDF::loadFile('http://epia.app/listaacolhido')->stream('github.pdf');
- 		//$data = ('<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span>        <span class="icon-bar"></span><span class="icon-bar"></span>        <span class="icon-bar"></span></button>    </div><div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">');
- 	//	return \PDF::loadView('navprincipal')->download('nav.pdf'); 
- 		//$pdf = \PDF::loadView('nav', $data);
-    	//return $pdf->download('invoice.pdf');
-    //	$snappy = App::make('snappy.pdf');
-    //	$snappy->generateFromHtml('<h1>Bill</h1><p>You owe me money, dude.</p>', '/tmp/bill-123.pdf');
+	public function cabecalho()
+	{
+		Fpdf::AliasNbPages();
+		Fpdf::AddPage();
+		Fpdf::SetY(10);
+		Fpdf::Image(public_path('css/images/casa.png'),5,5,-120); // importa uma imagem
+		Fpdf::SetXY(10, 40);
+		Fpdf::ln(5);
+	}
 
-    	//\PDF::loadView($data)->setPaper('a4')->setOrientation('landscape')->setOption('margin-bottom', 0)->save('teste4html.pdf');
- 	}
+	public function rodape()
+	{
+		$endereco = "Av. Jose de Achieta, n 455 bairro - Santana-Ap cep.: 68925-000 - fone(): 99999999999";
+		Fpdf::SetY(270);
+		Fpdf::SetFont('Arial','I',6);
+		Fpdf::Cell(0, 5, $endereco . " - Gerado por: ". Auth::user()->name.' - '. date('Y-m-d H:i:s') , 0, 0);
+	}
+
+	public function pdftermo(Request $request){
+
+	}
+
+	public function pdfficha(){
+
+	}	
+
+	public function github (){
+		$this->cabecalho();
+		$this->rodape();
+		Fpdf::Output('CalculoST.NFe'.'asdasdasd'.'.pdf', 'D');
+	}
+
 }
