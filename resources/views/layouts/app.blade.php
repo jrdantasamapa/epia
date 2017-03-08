@@ -20,26 +20,26 @@
 <script src="/js/jquery.min.js"></script>
 
    
-
- 
   <style>
     body {
       background-color: #CDC9C9;
      /*  font-size: 100%; */
-    }
+
+     }
     img {
       max-width: 100%;
     }
     @media screen and (max-width: 1024px) {
    /*estilos*/
     }
+    
 
   </style>
 </head>
 <body>
   <header class="header">
-    @yield('header')
-  </header>
+    @yield('header') 
+      </header>
   <div class="container">
     @yield('content')
   </div>

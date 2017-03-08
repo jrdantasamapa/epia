@@ -10,7 +10,7 @@
         </button>
         <!-- Branding Image -->
         <a class="navbar-brand" href="{{ url('/') }}">
-            <i class="fa fa-book fa-4x" aria-hidden="true"> e-PIA</i>
+            <img src="css/images/logo.png"><i class="fa fa-book fa-4x" aria-hidden="true"> e-PIA</i>
         </a>
     </div>
 
@@ -46,4 +46,6 @@
         @endcan
     </ul>
 </nav>
-
+<br>
+<br>
+<br>
