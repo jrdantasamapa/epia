@@ -49,8 +49,8 @@ class PiaController extends Controller
     }
 
     public function show($id){
-        $acolhidos = Acolhido::where('id', $id)->get();
-        $pias = Pia::find($id);
+        $acolhidos = Acolhido::find($id);
+        $pias = Pia::where('acolhido_id', $id)->get();
         $url = 'edit';
         return view('pia.index', compact('pias','url', 'acolhidos'));
     }
@@ -143,6 +143,28 @@ class PiaController extends Controller
             'text'=> 'Inserido Com Sucesso'
             ]);
             return Redirect('arranjo'.$id);
+        }
+    }
+
+
+    public function updatepia(Request $request){
+            $data = $request->All();
+            $id = $data['id'];
+            $pia = Pia::find($id);
+        if ($pia->update($data)) {
+            notify()->flash('Edição',
+            'success',
+            ['timer'=> 3000,
+            'text'=> 'Efetuado Com Sucesso'
+            ]);
+        return redirect()->action('AcolhidoController@index');
+        }else{
+            notify()->flash('Algo deu Errado Tente Outra Vez',
+            'error',
+            ['timer'=> 3000,
+            'text'=> 'Tente Novamente'
+            ]);
+        return back()->withInput();
         }
     }
 }

@@ -278,7 +278,7 @@
 						      <div class="col-md-12">
                     <div class="col-md-12">
                      <div class="col-md-6">
-                         <label class="col-md-8 control-label">Frequentou eascola antes do acolhimento:</label>
+                         <label class="col-md-8 control-label">Frequentou escola antes do acolhimento:</label>
                           <div class="col-md-4">
                           {!! Form::select('freq_escola', array(''=>'Selecione Um Opção','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
                           </div>
@@ -374,8 +374,172 @@
 			<!-- panel body -->
 				<div id="saude" class="panel-collapse collapse">
 					<div class="panel-body">
-						 
-					</div>
+						   <div class="form-group col-md-12">
+               <div class="col-md-4">
+                      {!! Form::text('peso', '', array('class'=>'form-control', 'placeholder'=>'Peso')) !!}
+               </div>
+               <div class="col-md-4">
+                      {!! Form::text('altura', '', array('class'=>'form-control', 'placeholder'=>'Altura')) !!}
+               </div>
+               <div class="col-md-4">
+                      {!! Form::text('sanguineo', '', array('class'=>'form-control', 'placeholder'=>'Tipo sanguineo')) !!}
+               </div>
+               </div>
+               <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Tomou as vacinas necessárias conforme a idade:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('vacinas', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_vacina', '', array('class'=>'form-control', 'placeholder'=>'Especificar vacinas')) !!}
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Apresenta algum problema de saúde:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('prob_saude', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_saude', '', array('class'=>'form-control', 'placeholder'=>'Especificar problema de Saúde')) !!}
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Esta realizando algum tratamento:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('tratamento', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_tratamento', '', array('class'=>'form-control', 'placeholder'=>'Especificar os Tratamentos')) !!}
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Faz uso de medicamento:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('uso_medicamento', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_medicamento', '', array('class'=>'form-control', 'placeholder'=>'Especificar os Medicamento')) !!}
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Possui alguma alergia:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('alergia', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_alergia', '', array('class'=>'form-control', 'placeholder'=>'Especificar as Alergias')) !!}
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Realizou alguma cirurgia:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('cirurgia', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_cirurgia', '', array('class'=>'form-control', 'placeholder'=>'Especificar as Cirurgias')) !!}
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Tem alguma doença cronica:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('doenca', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_doenca', '', array('class'=>'form-control', 'placeholder'=>'Especificar Doenças Cronicas')) !!}
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Alguem da familia tem doença Cronica:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('fam_cronica', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_fam_cronica', '', array('class'=>'form-control', 'placeholder'=>'Especificar doenças Cronicas Familiares')) !!}
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Realiza acompanhamento psicologico:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('psicologico', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_psicologic', '', array('class'=>'form-control', 'placeholder'=>'Especificar Acompanhemnto psicologico')) !!}
+                  </div>
+                </div>
+
+                 <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Realiza acompanhamento Psiquiatrico/Neurologico:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('psiq_neuro', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_psic_neuro', '', array('class'=>'form-control', 'placeholder'=>'Especificar Acompanhemnto Psiquiatrico/Neurologico')) !!}
+                  </div>
+                </div>
+
+                 <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Possui algum tipo de deficiencia:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('deficiencia', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_deficiencia', '', array('class'=>'form-control', 'placeholder'=>'Especificar deficiencia')) !!}
+                  </div>
+                </div>
+
+                 <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    <label class="control-label">Uso de álcool/Dogras na Familia:</label>
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('drog_familia', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-5'>
+                    {!! Form::text('espec_drog_familia', '', array('class'=>'form-control', 'placeholder'=>'Especificar Uso de Alcool/Droga na familia')) !!}
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">No último ano teve a necessidade de recorrer a algum serviço de saúde, odontologico ou medico:</label>
+                  </div>
+                  <div class='col-md-12'>
+                    <div class='col-md-2'>
+                    {!! Form::select('serv_saude', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                    </div>
+                    <div class='col-md-3'>
+                    {!! Form::select('serv_saude_motivo', array(''=>'Selecione o Motivo','Consulta de Rotina'=>'Consulta de Rotina', 'Consulta Emergencial'=>'Consulta Emergencial', 'Outros'=>'Outros' ), '', array('class'=>'form-control')) !!}
+                    </div>
+                    <div class='col-md-7'>
+                    {!! Form::text('espec_serv_saude', '', array('class'=>'form-control', 'placeholder'=>'Especificar Serviços de Saúde')) !!}
+                    </div>
+                  </div>
+                </div>
+				</div>
 				</div>
      		</div>
 
@@ -390,7 +554,172 @@
 			<!-- panel body -->
 				<div id="desenvolvimento" class="panel-collapse collapse">
 					<div class="panel-body">
-						  
+						   <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">Alimentação:</label>
+                  </div>
+                  <div class='col-md-3'>
+                    Apresenta Bom Apetite:
+                    {!! Form::select('apetite', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-3'>
+                    Apresenta Alergia:
+                    {!! Form::select('alergia', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   <div class='col-md-6'>
+                   <br>
+                    {!! Form::text('espec_alergia', '', array('class'=>'form-control', 'placeholder'=>'Especificar Alergias')) !!}
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <div class='col-md-3'>
+                  Recusa Alimentos:
+                    {!! Form::select('alimentos', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-4'>
+                    Necessita de Ajuda para Alimentação:
+                    {!! Form::select('ajuda_alimentacao', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   <div class='col-md-5'>
+                   <br>
+                    {!! Form::text('espec_ajuda_alimentacao', '', array('class'=>'form-control', 'placeholder'=>'Especificar Ajudas para alimentaçõo')) !!}
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">Sono:</label>
+                  </div>
+                  <div class='col-md-4'>
+                    Apresenta alteração do Sono:
+                    {!! Form::select('sono', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   <div class='col-md-8'>
+                   <br>
+                    {!! Form::text('espec_sono', '', array('class'=>'form-control', 'placeholder'=>'Especificar Alterações do Sono')) !!}
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">Linguagem:</label>
+                  </div>
+                  <div class='col-md-6'>
+                    Apresenta vocalização compativel com a Faixa etaria:
+                    {!! Form::select('vocalizacao', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-6'>
+                    Apresenta dificuldade nas pronuncias das palavras:
+                    {!! Form::select('pronuncia', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-6'>
+                   Compreende perguntas que lhe são feitas:
+                    {!! Form::select('perguntas', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-6'>
+                   Apresenta Gagueira:
+                    {!! Form::select('gagueira', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   
+                </div>
+
+                <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">Psicomotrocidade:</label>
+                  </div>
+                  <div class='col-md-4'>
+                    Apresenta dificuldade para movimentar-se:
+                  </div>
+                   <div class='col-md-2'>
+                    {!! Form::select('movimentar', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   <div class='col-md-6'>
+                    {!! Form::text('espec_movimentar', '', array('class'=>'form-control', 'placeholder'=>'Especificar Dificuldades de Movimentação')) !!}
+                  </div>
+                </div>
+
+                 <div class="form-group col-md-12">
+                  <div class='col-md-4'>
+                    Reage a estimulos auditivos:
+                  </div>
+                   <div class='col-md-2'>
+                    {!! Form::select('auditivo', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   <div class='col-md-6'>
+                    {!! Form::text('espec_auditivo', '', array('class'=>'form-control', 'placeholder'=>'Especificar')) !!}
+                  </div>
+                </div>
+                 <div class="form-group col-md-12">
+                  <div class='col-md-4'>
+                    Apresenta dificuldade na coordenação motora:
+                  </div>
+                   <div class='col-md-2'>
+                    {!! Form::select('motora', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   <div class='col-md-6'>
+                    {!! Form::text('espec_motora', '', array('class'=>'form-control', 'placeholder'=>'Especificar')) !!}
+                  </div>
+                </div>
+
+                 <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">Sintomas Psicofisiológicos:</label>
+                  </div>
+                  <div class="form-group col-md-12">
+                  <div class='col-md-5'>
+                    Apresenta dificuldades para controle de esfincteres:
+                  </div>
+                   <div class='col-md-2'>
+                    {!! Form::select('esfincteres', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                   <div class='col-md-5'>
+                    {!! Form::text('espec_esfincteres', '', array('class'=>'form-control', 'placeholder'=>'Especificar')) !!}
+                  </div>
+                  <div class='col-md-3'>
+                  Rói Unha:
+                    {!! Form::select('unha', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-3'>
+                  Chupa dedo:
+                    {!! Form::select('dedo', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  </div>
+                </div>
+
+                 <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">Socialização:</label>
+                  </div>
+                   <div class='col-md-4'>
+                   Diferencia pessoa conhecidas de pessoas estranhas:
+                    {!! Form::select('estranhas', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-4'>
+                   Demostra interesse em interagir com adultos:
+                    {!! Form::select('interegir_adulto', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-4'>
+                   Demostra interesse em interagir com Crianças:
+                    {!! Form::select('interegir_crianca', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                </div>
+
+
+                 <div class="form-group col-md-12">
+                  <div class='col-md-12'>
+                    <label class="control-label">Sexualidade:</label>
+                  </div>
+                   <div class='col-md-12'>
+                  Apresenta comportamento relativo a sexualidade compativel com sua faixa etaria:
+                  </div>
+                  <div class='col-md-2'>
+                    {!! Form::select('sexualidade', array(''=>'Selecione','Sim'=>'Sim', 'Não'=>'Não'), '', array('class'=>'form-control')) !!}
+                  </div>
+                  <div class='col-md-10'>
+                    {!! Form::text('espec_sexualidade', '', array('class'=>'form-control', 'placeholder'=>'Especificar')) !!}
+                  </div>
+                </div>
+
 					</div>
 				</div>
      		</div>

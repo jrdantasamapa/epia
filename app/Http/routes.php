@@ -87,9 +87,9 @@ Route::group(array('before' => 'auth'), function(){
 		Route::post('/updatepadrinho{id}', 'PadrinhoController@update');
 		Route::post('/updateacolhido{id}', 'AcolhidoController@update');
 		Route::post('/updatetermo{id}', 'TermoController@update');
-		Route::post('/updatesenha', 'UserController@updatesenha');
+		Route::post('/updatesenha', 'UserController@updatesenha'); 
+		Route::post('/updatepia', 'PiaController@updatepia');
 
-		
 
 		//Rotas Delete
 		Route::get('/deletarusuario{id}', 'UserController@delete');
